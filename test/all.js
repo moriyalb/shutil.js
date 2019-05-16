@@ -28,7 +28,7 @@ describe("all", ()=> {
 		let dir_deep = `${ROOT}/a/b/c`
 		await shutil.rmtree(dir_deep)
 		await shutil.mkdirp(dir_deep)
-		let fds = await shutil.walk(`${ROOT}`)		
+		let fds = await shutil.walk(`${ROOT}`)	
 
 		fds[0][0].should.equal("./test/sample/a/b/c")
 		fds[0][1].should.deepEqual([])

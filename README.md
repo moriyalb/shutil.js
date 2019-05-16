@@ -2,6 +2,8 @@
 
 A Lightweight File Operating Library
 
+[![Coverage Status](https://coveralls.io/repos/github/moriyalb/shutil.js/badge.svg?branch=master)](https://coveralls.io/github/moriyalb/shutil.js?branch=master)
+
 ## Installation
 
 Using npm:
