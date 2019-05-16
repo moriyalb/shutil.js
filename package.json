@@ -1,0 +1,30 @@
+{
+  "name": "shutil",
+  "version": "0.1.0",
+  "description": "A Lightweight File Operating Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moriyalb/shutil.js.git"
+  },
+  "keywords": [
+    "shutil",
+    "node.js",
+    "file",
+    "system",
+    "directory"
+  ],
+  "author": "moriyalb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moriyalb/shutil.js/issues"
+  },
+  "homepage": "https://github.com/moriyalb/shutil.js#readme",
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "should": "^13.2.3"
+  }
+}
