@@ -4,7 +4,8 @@
   "description": "A Lightweight File Operating Library",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/all.js"
+    "test": "mocha ./test/all.js",
+	"cover": "mocha -r blanket -R mocha-lcov-reporter > node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,18 @@
   },
   "homepage": "https://github.com/moriyalb/shutil.js#readme",
   "devDependencies": {
+    "blanket": "^1.2.3",
     "coveralls": "^3.0.3",
+    "jest": "^24.8.0",
     "mocha": "^6.1.4",
     "mocha-lcov-reporter": "^1.3.0",
     "should": "^13.2.3"
+  },
+  "dependencies": {},
+  "config": {
+	"blanket": {
+	  "pattern": "lib",
+	  "data-cover-never": ["node_modules"]
+	}
   }
 }
