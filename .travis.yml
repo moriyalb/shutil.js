@@ -8,6 +8,12 @@ cache:
   directories:
     - node_modules
 
+jobs:
+  include:
+    - stage: Produce Coverage
+      node_js: node
+      script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+
 
 # S: Build Lifecycle
 install:
@@ -18,7 +24,7 @@ before_script:
 # 无其他依赖项所以执行npm run build 构建就行了
 script:
   - npm run test
-  - npm run build
+  - npm build
 
 #指定分支，只有指定的分支提交时才会运行脚本
 branches:
