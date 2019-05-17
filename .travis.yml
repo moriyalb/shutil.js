@@ -22,7 +22,7 @@ script:
 after_success:
   - npm run coveralls
 
-service_name: travis-pro
+service_name: travis-cli
 repo_token: FyzM5GqSFOcB6nMM0zNvAvt3jUlICldnk
 
 #指定分支，只有指定的分支提交时才会运行脚本
