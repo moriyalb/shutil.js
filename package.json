@@ -1,11 +1,12 @@
 {
-  "name": "shutil",
+  "name": "shutil.js",
   "version": "0.1.0",
   "description": "A Lightweight File Operating Library",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/all.js",
-	"cover": "mocha -r blanket -R mocha-lcov-reporter | node_modules/coveralls/bin/coveralls.js"
+    "cover": "./node_modules/.bin/istanbul cover _mocha",
+	"coverall": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,8 @@
   "devDependencies": {
     "blanket": "^1.2.3",
     "coveralls": "^3.0.3",
+    "install": "^0.12.2",
+    "istanbul": "^0.4.5",
     "jest": "^24.8.0",
     "mocha": "^6.1.4",
     "mocha-lcov-reporter": "^1.3.0",
@@ -34,9 +37,11 @@
   },
   "dependencies": {},
   "config": {
-	"blanket": {
-	  "pattern": "lib",
-	  "data-cover-never": ["node_modules"]
-	}
+    "blanket": {
+      "pattern": "lib",
+      "data-cover-never": [
+        "node_modules"
+      ]
+    }
   }
 }
