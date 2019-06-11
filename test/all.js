@@ -30,26 +30,19 @@ describe("all", ()=> {
 	
 	it("walk", async () => {
 		await shutil.rmtree(ROOT)
-
-		let dir_deep = `${ROOT}/a/b/c`		
-		await shutil.mkdirp(dir_deep)
+		await shutil.copy("./test/walk_data", `${ROOT}`)
+		await shutil.md(`${ROOT}/a/b/d`)
+		await shutil.md(`${ROOT}/e/f`)
+		
 		let fds = await shutil.walk(`${ROOT}`)	
 
-		fds[0][0].should.equal("./test/sample/a/b/c")
-		fds[0][1].should.deepEqual([])
-		fds[0][2].should.deepEqual([])
-
-		fds[1][0].should.equal("./test/sample/a/b")
-		fds[1][1].should.deepEqual(['c'])
-		fds[1][2].should.deepEqual([])
-
-		fds[2][0].should.equal("./test/sample/a")
-		fds[2][1].should.deepEqual(['b'])
-		fds[2][2].should.deepEqual([])
-		
-		fds[3][0].should.equal("./test/sample")
-		fds[3][1].should.deepEqual(['a'])
-		fds[3][2].should.deepEqual([])
+		fds.should.deepEqual([
+			[ './test/sample/a/b', [ 'd' ], [ 'fa' ] ],
+			[ './test/sample/a', [ 'b' ], [] ],
+			[ './test/sample/c', [], [ 'ca' ] ],
+			[ './test/sample/e', [ 'f' ], [] ],
+			[ './test/sample', [ 'a', 'c', 'e' ], [] ]
+		])
 		
 	})
 

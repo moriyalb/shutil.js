@@ -1,6 +1,6 @@
 {
   "name": "shutil.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A Lightweight File Operating Library",
   "main": "index.js",
   "scripts": {
