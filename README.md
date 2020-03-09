@@ -78,8 +78,8 @@ More important, shutil will do nothing more beyond pure file system operations.
 	 * 		same as `shutil.cp`
 	 */
 	const shutil = require("shutil.js")
-	await shutil.copy("./from", "./to", {override: true, aswhole: false}) 	// `/from` copy to `/to/from`
-	await shutil.cp("./from", "./to", {override: true, aswhole: true}) 		// `/from` copy to `/to`
+	await shutil.copy("./from", "./to", {override: true, aswhole: true}) 	// `/from` copy to `/to/from`
+	await shutil.cp("./from", "./to", {override: true, aswhole: false}) 	// `/from` copy to `/to`
 ```
 
 <font size="3"><strong>shutil.exists: (src) -> Promise</strong></font>
